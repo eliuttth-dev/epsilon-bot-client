@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import { systemDefaultThemeSelector } from "../utils/toggleTheme";
 
 export const ThemeSelector = () => {
@@ -6,19 +6,17 @@ export const ThemeSelector = () => {
     const stored = localStorage.getItem("theme");
     return stored === "light" || stored === "dark"
       ? stored
-      : systemDefaultThemeSelector(); 
+      : systemDefaultThemeSelector();
   });
-  
+
   const changeTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  }
-  
+  };
+
   useEffect(() => {
-    localStorage.setItem("theme",theme);
+    localStorage.setItem("theme", theme);
     document.documentElement.setAttribute("data-theme", theme);
-  },[theme]);
- 
-  return(
-    <button onClick={changeTheme}>Change Theme</button>
-  )
-}
+  }, [theme]);
+
+  return <button onClick={changeTheme}>Change Theme</button>;
+};
