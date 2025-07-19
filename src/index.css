@@ -3,6 +3,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --color-ocean-700: #061B22;
-    --color-ocean-600: #0C303C;
+  --color-ocean-700: #061b22;
+  --color-ocean-600: #0c303c;
 }
